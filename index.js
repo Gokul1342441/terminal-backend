@@ -8,7 +8,7 @@ const port = 3000;
 app.use(express.json());
 
 // Update the Docker client to use the custom Docker socket path
-const docker = new Docker({ socketPath: '/custom-docker-socket/docker.sock' });
+const docker = new Docker({ socketPath: '/var/run/docker.sock' });
 
 app.post('/execute', async (req, res) => {
   const { command } = req.body;
